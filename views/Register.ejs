@@ -1,0 +1,134 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Personal stylesheet -->
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <!-- Login button css -->
+    <link rel="stylesheet" href="../assets/lgin-btn.css">
+
+    <!-- Register css -->
+    <link href="../assets/registerstyle.css" rel="stylesheet">
+
+    <!-- Montserrat font -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <title>Register</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="../assets/Assets/Logo.png" style="height: 50px; width: auto; margin-left: 15px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Find</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <!-- Logout button -->
+                <div class="navigation">
+                    <a class="loginb-btn" href="/login">
+                        <img class="powerbuttonimg" src="../assets/Assets/powerbuttongreen.png">
+                        <div class="loginb">LOGIN</div>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <section class="col-8 mx-auto">
+        <form class="RegisterForm">
+            <h2 class="register-title"><strong>Register</strong></h2>
+            <p>Please fill the form below</p>
+            <hr class="divider">
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col-auto desctag">
+                    <label for="inputName" class="col-form-label">Name</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" id="inputName" class="form-control reginput" name="inputName">
+                </div>
+            </div>
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col-auto desctag">
+                    <label for="inputUsername" class="col-form-label">Username</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" id="inputUsername" class="form-control reginput" name="inputUsername">
+                </div>
+            </div>
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col-auto desctag">
+                    <label for="inputUsername" class="col-form-label">Email</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" id="inputEmail" class="form-control reginput" name="inputEmail">
+                </div>
+            </div>
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col-auto desctag">
+                    <label for="inputPassword" class="col-form-label">Password</label>
+                </div>
+                <div class="col-8">
+                    <input type="password" id="inputPassword" class="form-control reginput" aria-describedby="passwordHelpInline" name="inputPassword">
+                </div>
+                <div class="col">
+                    <span id="passwordHelpInline" class="form-text pwinstruct">
+                    Must be 8-20 characters long.
+                </span>
+                </div>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                Username or email is already taken
+            </div>
+            <div class="regbutton">
+                <button class="btn btn-primary" type="submit">Confirm</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function() {
+        $(".alert").hide()
+        $('.registerForm').on("submit", function(e) {
+            var formData = $(this).serialize()
+            e.preventDefault()
+            $.ajax({
+                type: "POST",
+                url: "/register",
+                data: formData,
+                success: function(res) {
+                    if (res == "success") location.href = "/verify/" + $("#inputUsername").val()
+                    else $(".alert").show()
+                }
+            })
+        })
+    })
+</script>
+
+</html>

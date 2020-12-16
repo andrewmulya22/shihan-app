@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Personal stylesheet -->
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <!-- Logout button css -->
+    <link rel="stylesheet" href="../assets/lgt-btn.css">
+
+    <!-- Montserrat font -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <title>Quantum Physics | Post</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="../assets/Assets/Logo.png" style="height: 50px; width: auto; margin-left: 15px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/explore">Find</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/account">Account</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <div class="input-group">
+                    <input class="form-control searchValue" type="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary my-2 my-sm-0 buttonSearch" type="submit" value="submit">Search</button>
+                    </div>
+                </div>
+                <!-- Logout button -->
+                <div class="navigation">
+                    <a class="logout-btn" href="">
+                        <img class="powerbuttonimg" src="../assets/Assets/powerbutton.png">
+                        <div class="logout">LOGOUT</div>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid content">
+        <div class="row">
+            <div class="col-sm-3 sidenav">
+                <ul>
+                    <li class="sidenav-title">Grup Anda</li>
+                    <% for(var i = 0; i<result.length; i++){ %>
+                        <% var templink = result[i].LINK_MAPEL %>
+                            <% var tempname = result[i].NAMA_MAPEL %>
+                                <li>
+                                    <a href="/category/<%= tempname %>"><img src="<%= templink %>" style="padding-right: 15px;"><%= tempname %></a>
+                                </li>
+                                <% } %>
+                </ul>
+            </div>
+            <div class="col-sm-9 mainbd">
+                <h3 style="margin-top: 20px">
+                    <%= result2.JUDUL %>
+                </h3>
+                <form class="form-inline">
+                    <p>Category:
+                        <a class="category-name">
+                            <%= result2.NAMA_MAPEL %>
+                        </a>
+                    </p>
+                    <p>Topic:
+                        <a class="topic-name">
+                            <%= result2.NAMA_TOPIK %>
+                        </a>
+                    </p>
+                    <p>Penulis:
+                        <a class="writer-name">
+                            <%= result2.NAMA %>
+                        </a>
+                    </p>
+                </form>
+                <p>
+                    <%= result2.DESKRIPSI %>
+                </p>
+                <hr class="divider">
+
+                <div class="comment-section">
+                    <!-- Button trigger modal -->
+                    <form class="form-inline commentmodal">
+                        <div class="form-group commentstatic">
+                            <strong>Comments</strong>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm commentbutton" data-toggle="modal" data-target="#staticBackdrop">
+                            Leave a comment
+                        </button>
+                    </form>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Share your opinion</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="commentbox" rows="10" placeholder="add a public comment..."></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary btnPost">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="posted-comments-section">
+                        <% for(var i = 0; i<result3.length; i++){ %>
+                            <% var tempname = result3[i].NAMA %>
+                                <% var tempkomentar = result3[i].KOMENTAR %>
+                                    <div class="posted-comments">
+                                        <h6><b>
+                                            <%= tempname %>
+                                        </b></h6>
+                                        <p>
+                                            <%= tempkomentar %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+        $(function() {
+            $('.btnPost').click(function(e) {
+                let postid = "<%= postid %>"
+                let komentar = $('#commentbox').val()
+                $.ajax({
+                    type: "POST",
+                    url: "/post/komentar/",
+                    data: {
+                        postid,
+                        komentar
+                    },
+                    success: function(res) {
+                        location.href = "/post/" + postid
+                    }
+                })
+            })
+            $('.buttonSearch').on("click", function(e) {
+                e.preventDefault()
+                var str = $(".searchValue").val()
+                location.href = "/explore/" + str
+            })
+        })
+    </script>
+</body>
+
+</html>

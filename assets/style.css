@@ -1,0 +1,231 @@
+body{
+    font-family: 'Montserrat';
+}
+
+nav {
+    background-image: linear-gradient(to right, #3FD1FF, #D943FF);
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+h1 {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+    text-align: center;
+    font-size: 72px;
+}
+
+.gradient-text {
+    /* Fallback: Set a background color. */
+    background-color: red;
+    /* Create the gradient. */
+    background-image: linear-gradient(45deg, #FF8383, #5177FF);
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+div.homepgbtn {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    font-size: 24px;
+}
+
+
+/* For login page */
+
+form.logincont {
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    background-color: #A4D3FF;
+    border-radius: 20px;
+}
+
+.login-inputs {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.loginbtn-container {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.loginbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 10px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 20px;
+}
+
+span.psw {
+    float: right;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}
+
+.alert {
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+/* Main Page */
+.content {
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.sidenav-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.sidenav a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidenav ul {
+    padding: 0px;
+}
+
+.sidenav li {
+    list-style: none;
+    padding-bottom: 20px;
+}
+
+.mainbd {
+    padding-top: 20px;
+}
+
+
+/* Account page */
+.youracc-title {
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.acc {
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #F4FAFF;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.accinfo-input {
+    height: 50px;
+}
+
+.accinfo-label {
+    width: 100px;
+    margin: 0;
+    padding-top: 14px;
+}
+
+/* edit main pg */
+
+form.form-inline p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    
+}
+
+form.form-inline p a {
+    text-decoration: none;
+    color: black;
+}
+
+.divider {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.whatsinmodal {
+    margin-bottom: 50px;
+}
+
+.whatsinstatic {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.whatsinbutton {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+/* comment page, quanphyspost */
+.commentbutton {
+    margin-left: 30px;
+}
+
+.commentstatic {
+    font-size: 20px;
+}
+
+.posted-comments {
+    margin-top: 30px;
+}
