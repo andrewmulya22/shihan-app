@@ -4,6 +4,8 @@ const pool = require("./db")
 const path = require("path")
 const session = require('express-session');
 
+var PORT = process.env.PORT || 5000;
+
 app.use(session({
     secret: 'secret',
     resave: true,
@@ -47,4 +49,4 @@ app.use('/category', category)
 var post = require("./controllers/post")
 app.use('/post', post)
 
-app.listen(8000)
+app.listen(PORT)
