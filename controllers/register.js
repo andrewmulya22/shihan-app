@@ -5,7 +5,7 @@ const pool = require("../db")
 const nodemailer = require('nodemailer')
 
 router.get('/', (req, res) => {
-    if (req.session.loggedin != true) res.render('register')
+    if (req.session.loggedin != true) res.render('Register')
     else res.redirect('/user')
 })
 
