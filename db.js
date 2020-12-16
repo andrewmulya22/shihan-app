@@ -4,7 +4,7 @@ const pool = mysql.createPool({
     host: '***REMOVED***',
     user: '***REMOVED***',
     password: '***REMOVED***',
-    database: '***REMOVED***?reconnect=true',
+    database: '***REMOVED***',
     charset: 'utf8'
 })
 
