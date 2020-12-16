@@ -1,0 +1,29 @@
+.Verifyform {
+    background-color: #A4D3FF;
+    border-radius: 5px;
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.divider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.desctag {
+    width: 200px;
+}
+
+.confirm-button{
+    display: flex;
+    justify-content: center;
+}
+
+.confirm-button .btn{
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
