@@ -10,7 +10,7 @@ router.get('/:username', async(req, res) => {
         req.session.verified = true
         res.redirect('/user')
     }
-    res.render('verify', { email: result[0].EMAIL })
+    res.render('Verify', { email: result[0].EMAIL })
 })
 
 router.post('/', async(req, res) => {
