@@ -9,7 +9,7 @@ router.get('/', async(req, res) => {
 })
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedin != true) res.render('login')
+    if (req.session.loggedin != true) res.render('Login')
     else res.redirect('/user')
 })
 
