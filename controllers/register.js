@@ -32,8 +32,8 @@ async function sendEmail(email, verifCode) {
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: 'shihancorp@gmail.com', // generated ethereal user
-            pass: 'hebatganteng', // generated ethereal password
+            user: '', // generated ethereal user
+            pass: '', // generated ethereal password
         },
     });
 
